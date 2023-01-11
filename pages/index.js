@@ -59,13 +59,14 @@ function addToHomeScreen() {
         </span>
         <span className="uppercase "> / Website is under review / </span>
       </div> */}
+      <AddToHomeScreenPrompt />
+                <addToHomeScreenIOS/>
       <Header />
       <MainHero data={data}/>
       {/* Home page main section */}
       <div className="h-screen max-w-full pt-2 text-white bg-red font-blinker">
         <div className="w-full p-10 bg-blackk">
-                <AddToHomeScreenPrompt />
-                <addToHomeScreenIOS/>
+                
 
           <Trending data ={data}/>
           <div ><TopArticlesAds/></div>
