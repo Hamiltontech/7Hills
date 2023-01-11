@@ -25,7 +25,29 @@ export default function Home() {
     })
   }, [])
 
+  function addToHomeScreenIOS() {
+    var a2hsBtn = document.querySelector(".ad2hs-prompt"); // hide your UI button
+    a2hsBtn.style.display = 'none';
+    // this is the actual script that opens the share menu
+    var a2hsFakeBtn = document.querySelector(".ad2hs-fake-btn"); // fake button to trigger share sheet
+    a2hsFakeBtn.style.display = 'block'; // show the fake button
+    a2hsFakeBtn.addEventListener("click", addToHomeScreen); // attach click listener
+}
 
+function addToHomeScreen() {
+    var a2hsBtn = document.querySelector(".ad2hs-prompt"); // hide the fake button
+    a2hsBtn.style.display = 'none';
+    // this is the actual script that opens the share menu
+    if(navigator.share) {
+        navigator.share({
+            title: "My Progressive Web App",
+            text: "Check out My Progressive Web App",
+            url: "https://mypwa.com",
+        })
+            .then(() => console.log("Successful share"))
+            .catch((error) => console.log("Error sharing", error));
+    }
+}
 
   return (
     <div>
@@ -42,7 +64,9 @@ export default function Home() {
       {/* Home page main section */}
       <div className="h-screen max-w-full pt-2 text-white bg-red font-blinker">
         <div className="w-full p-10 bg-blackk">
-        <AddToHomeScreenPrompt />
+                <AddToHomeScreenPrompt />
+                <addToHomeScreenIOS/>
+
           <Trending data ={data}/>
           <div ><TopArticlesAds/></div>
           
