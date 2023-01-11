@@ -37,9 +37,11 @@ function AddToHomeScreenPrompt() {
   return (
     <>
       {prompt !== null && (
+        <div className="add-to-home-screen-prompt">
         <button onClick={handleAddToHomeScreenClick}>
           Add to Home Screen
         </button>
+        </div>
       )}
     </>
   );
