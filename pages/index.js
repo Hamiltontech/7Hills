@@ -38,8 +38,8 @@ export default function Home() {
         <span className="uppercase "> / Website is under review / </span>
       </div> */}
       <Header />
-      <AddToHomeScreenPrompt />
       <MainHero data={data}/>
+      <AddToHomeScreenPrompt />
 
       {/* Home page main section */}
       <div className="h-screen max-w-full pt-2 text-white bg-red font-blinker">
