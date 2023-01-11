@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 import { useEffect, useState, useRef } from "react";
 import LatestArticles from './components/LatestArticles'
 import axios from "axios";
-
+import AddToHomeScreenPrompt from "./components/AddToHomeScreenPrompt"
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -38,7 +38,7 @@ export default function Home() {
         <span className="uppercase "> / Website is under review / </span>
       </div> */}
       <Header />
-      
+      <AddToHomeScreenPrompt />
       <MainHero data={data}/>
 
       {/* Home page main section */}
