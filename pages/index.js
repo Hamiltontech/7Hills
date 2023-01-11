@@ -39,11 +39,10 @@ export default function Home() {
       </div> */}
       <Header />
       <MainHero data={data}/>
-      <AddToHomeScreenPrompt />
-
       {/* Home page main section */}
       <div className="h-screen max-w-full pt-2 text-white bg-red font-blinker">
         <div className="w-full p-10 bg-blackk">
+        <AddToHomeScreenPrompt />
           <Trending data ={data}/>
           <div ><TopArticlesAds/></div>
           
